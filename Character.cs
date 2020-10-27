@@ -39,7 +39,6 @@ namespace ConsoleApp1
             this.vision = new Tile[4];
 
             //vision[0] = "up";
-
             //Vison[0] = Movement.Up;
             //this.Vison[1] = down;
             //this.Vison[2] = left;
