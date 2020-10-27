@@ -8,7 +8,7 @@ namespace ConsoleApp1
     {
         private int goldAmount;
         Random r = new Random();
-        
+                
         public int GoldAmount { get => goldAmount; set => goldAmount = value; }
 
         public Gold(int x, int y) : base(x, y)
