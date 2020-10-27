@@ -17,7 +17,6 @@ namespace ConsoleApp1
         string output = "";
 
         int numEnemies;
-
         
         public int NumEnemies { get => numEnemies; set => numEnemies = value; }
         public int Width { get => width; set => width = value; }
