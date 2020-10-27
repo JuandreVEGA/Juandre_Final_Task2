@@ -78,8 +78,45 @@ namespace ConsoleApp1
 
         public void Load()
         {
+            string directoryName;
+            directoryName = "D:/2020/GADE6111/EXAM PROJECT/ConsoleApp1/";
+            string[] listOfFiles;
+            if (Directory.Exists(directoryName))
+            {
+                Console.WriteLine("Directory exists, and it contains the following: ");
+                listOfFiles = Directory.GetFiles(directoryName);
 
+                for (int x = 0; x < listOfFiles.Length; ++x)
+                {
+                    Console.WriteLine("{0}", listOfFiles[x]);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Directory does not exist");
+            }
 
+            const string FILENAME = "Map.cs";
+
+            FileStream inFile = new FileStream(FILENAME, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(inFile);
+
+            int counter = 1;
+            string name;
+            Console.WriteLine("Map Loading in ....");
+            name = reader.ReadLine();
+
+            while (name != null)
+            {
+                Console.WriteLine(" " + counter + " " + name);
+                name = reader.ReadLine();               
+                ++counter;
+            }
+            reader.Close();
+            inFile.Close();
+
+            using (FileStream fs = new FileStream("Map.cs", FileMode.Open)) ;
+           
         }
 
         public override string ToString()
