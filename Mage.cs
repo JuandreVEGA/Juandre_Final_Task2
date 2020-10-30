@@ -12,14 +12,20 @@ namespace ConsoleApp1
 
         }
 
-        //public override Movement ReturnMove(Movement.Up)
-        //{
-        //    return base.ReturnMove(move);
-        //}
+        public override Movement ReturnMove(Movement move = Movement.NoMovement)
+        {
+            return base.ReturnMove(move);
+        }
 
         public override bool CheckRange(Character target)
         {
-            return base.CheckRange(target);
+            bool check = false;
+
+            if ((target.X == this.x + 1 && target.Y == this.y) || (target.X == this.x - 1 && target.Y == this.y) || (target.X == this.x  && target.Y == this.y + 1) || (target.X == this.x && target.Y == this.y - 1))
+            {
+                check = true;
+            }            
+            return check;
         }          
     }
 }

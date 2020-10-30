@@ -2,6 +2,7 @@
 using System.Security.Cryptography.X509Certificates;
 using System.Xml.Linq;
 using System.IO;
+using System.Runtime.CompilerServices;
 
 namespace ConsoleApp1
 {
@@ -19,10 +20,14 @@ namespace ConsoleApp1
                       
         }
 
-        //public bool MovePlayer(Movement move)
-        //{
-
-        //}
+        public bool MovePlayer()
+        {
+            //if (Item is in range)
+            //{
+            //    pick up item stroe in array
+            //}
+            return false;
+        }
 
         public void playGame()
         {
@@ -122,6 +127,17 @@ namespace ConsoleApp1
         public override string ToString()
         {
             return ("Hello");
-        }       
+        }  
+        
+        public void EnemyAttack()
+        {
+            // attacks characters
+            //this.HP = this.HP - this.damage;
+        }
+
+        public void MoveEnemies()
+        {
+            // Moves enemies around and updates arrays
+        }
     }
 }

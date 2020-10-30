@@ -30,7 +30,7 @@ namespace ConsoleApp1
 
         public override string ToString()
         {
-            return ("Hero Stats: " + "\nHP: " + this.Hp + " / " + this.Max_hp + "\nDamage: 2" + "[" + this.x + "," + this.y + "]");
+            return ("Hero Stats: " + "\nHP: " + this.Hp + " / " + this.Max_hp + "\nDamage: 2" + "[" + this.x + "," + this.y + "]" + "\nGold Amount: " + this.GoldPurse);
         }
     }
 }

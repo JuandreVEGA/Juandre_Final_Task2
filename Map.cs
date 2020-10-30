@@ -8,6 +8,7 @@ namespace ConsoleApp1
         Tile[,] randomMap;        
         int heroX, heroY;
         int[,] enemy;
+        int[,] item;
         Random r = new Random();
 
         int maxHeight, maxWidth;
@@ -48,7 +49,7 @@ namespace ConsoleApp1
 
         public void Create()
         {            
-            int heroX, heroY, presentX, presentY;
+            int heroX, heroY, presentX, presentY, goldX, goldY, mageX, mageY;
             Random r = new Random();
             
             // TAKE THIS OUT BEFORE COMPLETEING THE GAME            
@@ -57,6 +58,9 @@ namespace ConsoleApp1
 
             heroX = r.Next(0, this.MaxWidth);
             heroY = r.Next(0, this.MaxHeight);
+            mageX = r.Next(0, this.MaxWidth);
+            mageY = r.Next(0, this.MaxHeight);
+
 
             int[] xcordsHero = new int[1];
             int[] ycordsHero = new int[1];
@@ -70,7 +74,16 @@ namespace ConsoleApp1
                 heroY = r.Next(0, this.MaxHeight);                
             }
 
+
             newMap[heroY, heroX] = 'H';
+
+            while (newMap[mageY, mageX] == 'X')
+            {
+                mageX = r.Next(0, this.MaxWidth);
+                mageY = r.Next(0, this.MaxHeight);
+            }
+
+            newMap[mageY, mageX] = 'M';
 
             bool roundpass = false;
             int highScore = 0;
@@ -83,6 +96,8 @@ namespace ConsoleApp1
                 {
                     presentX = r.Next(0, this.MaxWidth);
                     presentY = r.Next(0, this.MaxHeight);
+                    goldX = r.Next(0, this.MaxWidth);
+                    goldY = r.Next(0, this.MaxHeight);
 
                     while (newMap[presentY, presentX] == 'X')
                     {
@@ -90,7 +105,15 @@ namespace ConsoleApp1
                         presentX = r.Next(0, this.MaxHeight);
                     }
 
+                    while (newMap[goldY, goldX] == 'X')
+                    {
+                        goldX = r.Next(0, this.MaxWidth);
+                        goldY = r.Next(0, this.MaxHeight);
+                    }
+
+
                     newMap[presentY, presentX] = 'G';
+                    newMap[goldY, goldX] = 'g';
 
                     xcordsP[i] = presentX;
                     ycordsP[i] = presentY;
@@ -229,6 +252,24 @@ namespace ConsoleApp1
                     else newMap[y, x] = '.';
                 }
             }            
+        }
+        public void GetItemAtPosition(int x, int y)
+        {
+            int itemToFind = 0;
+
+            for (int i = 0; i < item.Length; i++)
+            {
+                //if (item[0] == { x, y})
+                //{
+                //    item[i] = 0;
+                //    return Item;
+                //}
+                //else
+                //{
+                //    return null;
+                //}
+            }
+            
         }
     }
 }

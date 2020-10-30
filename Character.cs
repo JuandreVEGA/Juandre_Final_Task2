@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.CompilerServices;
+using System;
 
 namespace ConsoleApp1
 {
@@ -7,9 +8,9 @@ namespace ConsoleApp1
         protected int HP;
         protected int MaxHP;
         protected int damage;
+        protected int goldPurse;
 
         Tile[] vision;        
-
 
         Random r = new Random();
 
@@ -24,6 +25,7 @@ namespace ConsoleApp1
         public int Damage { get => damage; set => damage = value; }
 
         public Tile[] Vison { get => vision; set => vision = value; }
+        public int GoldPurse { get => goldPurse; set => goldPurse = value; }
 
         public enum Movement { NoMovement, Up, Down, Left, Right }
 
@@ -151,7 +153,7 @@ namespace ConsoleApp1
             }            
         }
 
-        public Movement ReturnMove(Movement move = 0)
+        public virtual Movement ReturnMove(Movement move = 0)
         {
             switch (move)
             {
@@ -177,5 +179,15 @@ namespace ConsoleApp1
         {
             return ("Overriding Object");
         }
+
+        public void pickUP(Item i)
+        {
+            int goldAmount = 2;
+
+            if(i is Gold)
+            {
+                goldPurse = goldPurse + goldAmount;
+            }
+        }        
     }
 }
