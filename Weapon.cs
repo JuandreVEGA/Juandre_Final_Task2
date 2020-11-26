@@ -12,7 +12,7 @@ namespace ConsoleApp1
 
         public Weapon(string symbol, int x, int y) : base(x, y)
         {
-
+            t
         }
     }
 }
