@@ -15,7 +15,20 @@ namespace ConsoleApp1
 
         public RangedWeapon(string enumType, int x, int y)
         {
-
+            if (enumType == "Rifle")
+            {
+                this.Durability = 3;
+                this.Damage = 5;
+                this.Cost = 7;
+                this.Range = 3
+            }
+            else if (enumType == "Longbow")
+            {
+                this.Durability = 4;
+                this.Damage = 4;
+                this.Cost = 6;
+                this.Range = 2;
+            }
         }
     }
 }

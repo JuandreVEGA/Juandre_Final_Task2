@@ -5,18 +5,18 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-    public class MeleeWeapon : Weapon
-    {
+    public class MeleeWeapon : Item
+        {
         public string weaponType;
         public enum Types { Dagger, Longsword};
 
-        public override int Range()
-        {
-            return 1;
-        }
+        //public override int Range()
+        //{
+        //    return 1;
+        //}
 
 
-        public MeleeWeapon(string enumType, int x, int y) : base("D", x, y)
+        public MeleeWeapon(string enumType, int x, int y) : base(x,y)
         {
             if (enumType == "Dagger")
             {
@@ -31,6 +31,11 @@ namespace ConsoleApp1
                 this.Cost = 5;
             }
            
+        }   
+
+        public override string ToString()
+        {
+            throw new NotImplementedException();
         }
     }
 }
