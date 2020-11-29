@@ -49,7 +49,7 @@ namespace ConsoleApp1
 
         public void Create()
         {            
-            int heroX, heroY, presentX, presentY, goldX, goldY, mageX, mageY;
+            int heroX, heroY, presentX, presentY, goldX, goldY, mageX, mageY, daggerY, daggerX, rifleY, rifleX, swordX, swordY, leaderX, leaderY, bowX, bowY;
             Random r = new Random();
             
             // TAKE THIS OUT BEFORE COMPLETEING THE GAME            
@@ -60,6 +60,16 @@ namespace ConsoleApp1
             heroY = r.Next(0, this.MaxHeight);
             mageX = r.Next(0, this.MaxWidth);
             mageY = r.Next(0, this.MaxHeight);
+            leaderX = r.Next(0, this.MaxWidth);
+            leaderY = r.Next(0, this.MaxHeight);
+            rifleX = r.Next(0, this.MaxWidth);
+            rifleY = r.Next(0, this.MaxHeight);
+            bowY = r.Next(0, this.MaxWidth);
+            bowX = r.Next(0, this.MaxHeight);
+            swordX = r.Next(0, this.MaxWidth);
+            swordY = r.Next(0, this.MaxHeight);
+            daggerX = r.Next(0, this.MaxWidth);
+            daggerY = r.Next(0, this.MaxHeight);
 
 
             int[] xcordsHero = new int[1];
@@ -74,8 +84,48 @@ namespace ConsoleApp1
                 heroY = r.Next(0, this.MaxHeight);                
             }
 
-
             newMap[heroY, heroX] = 'H';
+
+            while (newMap[leaderY, leaderX] == 'X')
+            {
+                leaderX = r.Next(0, this.MaxWidth);
+                leaderY = r.Next(0, this.MaxHeight);
+            }
+
+            newMap[leaderY, leaderX] = 'L';
+
+            while (newMap[rifleY, rifleX] == 'X')
+            {
+                rifleX = r.Next(0, this.MaxWidth);
+                rifleY = r.Next(0, this.MaxHeight);
+            }
+
+            newMap[rifleY, bowX] = 'R';
+
+            while (newMap[bowY, bowX] == 'X')
+            {
+                bowX = r.Next(0, this.MaxWidth);
+                bowY = r.Next(0, this.MaxHeight);
+            }
+
+            newMap[bowY, bowX] = 'B';
+
+
+            while (newMap[swordY, swordX] == 'X')
+            {
+                swordX = r.Next(0, this.MaxWidth);
+                swordY = r.Next(0, this.MaxHeight);
+            }
+
+            newMap[swordY, swordX] = 'S';
+
+            while (newMap[daggerY, daggerX] == 'X')
+            {
+                swordX = r.Next(0, this.MaxWidth);
+                daggerX = r.Next(0, this.MaxHeight);
+            }
+
+            newMap[daggerY, daggerX] = 'D';
 
             while (newMap[mageY, mageX] == 'X')
             {
