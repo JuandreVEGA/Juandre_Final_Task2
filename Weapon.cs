@@ -11,7 +11,7 @@ namespace ConsoleApp1
         protected string weaponType;
 
         public int Damage { get => damage; set => damage = value; }
-        public int Range { get => range; set => range = value; }
+        public virtual int Range { get => range; set => range = value; }
         public int Durability { get => durability; set => durability = value; }
         public int Cost { get => cost; set => cost = value; }
         public string WeaponType { get => weaponType; set => weaponType = value; }

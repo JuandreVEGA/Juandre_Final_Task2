@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Juandre_Final_Task2
+namespace ConsoleApp1
 {
     class Shop
     {
@@ -19,30 +19,33 @@ namespace Juandre_Final_Task2
         {
 
         }
+        private Weapon RandomWeapon()
+        {
+            randomNum = r.Next(0, 4);
+            MeleeWeapon melee;
+            RangedWeapon ranged;
 
-        //private Weapon RandomWeapon()
-        //{           
-
-        //    randomNum = r.Next(0, 4);
-
-        //    if (randomNum == 1)
-        //    {
-        //        type = "Dagger";
-        //    }
-        //    else if (randomNum == 2)
-        //    {
-        //        type = "Longsword";
-        //    }
-        //    else if (randomNum == 3)
-        //    {
-        //        type = "LongBow";
-        //    }
-        //    else
-        //    {
-        //        type = "Rifle";
-        //    }
-        //    return type;
-        //}
+            if (randomNum == 1)
+            {
+                melee = new MeleeWeapon(MeleeWeapon.Types.Dagger, 0, 0);
+                return melee;
+            }
+            else if (randomNum == 2)
+            {
+                melee = new MeleeWeapon(MeleeWeapon.Types.Longsword, 0, 0);
+                return melee;
+            }
+            else if (randomNum == 3)
+            {
+                ranged = new RangedWeapon(RangedWeapon.Types.Longbow, 0, 0);
+                return ranged;
+            }
+            else
+            {
+                ranged = new RangedWeapon(RangedWeapon.Types.Rifle, 0, 0);
+                return ranged;
+            }            
+        }
 
         public void Buy(int num)
         {

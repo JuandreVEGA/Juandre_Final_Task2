@@ -9,27 +9,27 @@ namespace ConsoleApp1
     {        
         public enum Types { Dagger, Longsword };
 
-        public MeleeWeapon(string enumType, int x, int y) : base(enumType,x, y)
+        public MeleeWeapon(Types type, int x, int y) : base("W" ,x, y)
         {
-            if (enumType == "Dagger")
+            if (type == Types.Dagger)
             {
                 this.durability = 10;
                 this.Damage = 3;
                 this.Cost = 3;
                 this.weaponType = "Dagger";
-                enumType = "Dagger";
+                
             }
-            else if (enumType == "Longsword")
+            else if (type == Types.Longsword)
             {
                 this.Durability = 6;
                 this.Damage = 4;
                 this.Cost = 5;
                 this.weaponType = "Longsword";
-                enumType = "Longsword";
+                ;
             }
-        }
+        }        
 
-        public new int Range
+        public override int Range
         {
             get { return 1; }            
         }
