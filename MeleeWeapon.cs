@@ -16,7 +16,7 @@ namespace ConsoleApp1
                 this.durability = 10;
                 this.Damage = 3;
                 this.Cost = 3;
-                this.weaponType = "Dagger";
+                this.weaponType = "Dagger";                
                 
             }
             else if (type == Types.Longsword)

@@ -12,18 +12,19 @@ namespace ConsoleApp1
         {
             if (type == Types.Longbow)
             {
-                this.durability = 10;
-                this.Damage = 3;
-                this.Cost = 3;
+                this.durability = 4;
+                this.Damage = 4;
+                this.Cost = 6;
                 this.weaponType = "Longbow";
-
+                this.Range = 2;
             }
             else if (type == Types.Rifle)
             {
-                this.Durability = 6;
-                this.Damage = 4;
-                this.Cost = 5;
+                this.Durability = 3;
+                this.Damage = 5;
+                this.Cost = 7;
                 this.weaponType = "Rifle";
+                this.Range = 3;
                 ;
             }
         }

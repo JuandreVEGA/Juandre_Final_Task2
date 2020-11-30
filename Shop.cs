@@ -1,13 +1,15 @@
 ﻿using ConsoleApp1;
 using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace ConsoleApp1
 {
     class Shop
     {
-        int[] weaponArray = new int[3];
+        string[] weaponArray = new string[3];
         private Random r = new Random();
         private string Character;
 
@@ -15,9 +17,15 @@ namespace ConsoleApp1
         string type;
         int xGold;
 
-        public Shop(string Character)
-        {
+        public int Cost { get; private set; }
 
+        public Shop(Character target)
+        {
+            for (int i = 0; i < weaponArray.Length; i++)
+            {                
+                RandomWeapon();
+                weaponArray[i] = this.type;
+            }           
         }
         private Weapon RandomWeapon()
         {
@@ -47,14 +55,22 @@ namespace ConsoleApp1
             }            
         }
 
+        public bool CanBuy(int num)
+        {
+            if (this.xGold >= this.Cost)
+            {
+                return true;
+            }
+            return false;
+        }
         public void Buy(int num)
         {
-            
+            this.xGold -= this.Cost;
         }
 
         public string DisplayWeapon(int num)
         {
-            return "Buy " + type + xGold;
+            return "Buy " + this.type + this.xGold;
         }
     }
 }

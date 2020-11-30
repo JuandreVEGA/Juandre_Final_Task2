@@ -100,7 +100,7 @@ namespace ConsoleApp1
                 rifleY = r.Next(0, this.MaxHeight);
             }
 
-            newMap[rifleY, bowX] = 'R';
+            newMap[rifleY, bowX] = 'W';
 
             while (newMap[bowY, bowX] == 'X')
             {
@@ -108,7 +108,7 @@ namespace ConsoleApp1
                 bowY = r.Next(0, this.MaxHeight);
             }
 
-            newMap[bowY, bowX] = 'B';
+            newMap[bowY, bowX] = 'W';
 
 
             while (newMap[swordY, swordX] == 'X')
@@ -117,7 +117,7 @@ namespace ConsoleApp1
                 swordY = r.Next(0, this.MaxHeight);
             }
 
-            newMap[swordY, swordX] = 'S';
+            newMap[swordY, swordX] = 'W';
 
             while (newMap[daggerY, daggerX] == 'X')
             {
@@ -125,7 +125,7 @@ namespace ConsoleApp1
                 daggerX = r.Next(0, this.MaxHeight);
             }
 
-            newMap[daggerY, daggerX] = 'D';
+            newMap[daggerY, daggerX] = 'W';
 
             while (newMap[mageY, mageX] == 'X')
             {
@@ -133,7 +133,7 @@ namespace ConsoleApp1
                 mageY = r.Next(0, this.MaxHeight);
             }
 
-            newMap[mageY, mageX] = 'M';
+            newMap[mageY, mageX] = 'W';
 
             bool roundpass = false;
             int highScore = 0;
